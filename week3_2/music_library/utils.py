@@ -24,3 +24,12 @@ def parse_length(length):
             raise ValueError("Incorrect minutes!")
 
     return (hours,minutes,seconds)
+
+def total_length_helper(smaller, bigger, playlist, length_lambda):
+    smaller += sum(list(map(length_lambda, playlist)))
+    if smaller > 59:
+        bigger += smaller // 60
+        smaller %= 60
+
+    return (smaller, bigger)
+        
