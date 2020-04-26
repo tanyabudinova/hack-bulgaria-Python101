@@ -1,0 +1,2 @@
+#for mouse_beep
+PyAutoGUI==0.9.50
